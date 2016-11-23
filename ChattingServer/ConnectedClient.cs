@@ -11,6 +11,6 @@ namespace ChattingServer
     public class ConnectedClient
     {
         public IClient connection;
-        public string Username { get; set; }
+        public string Username { get; set; } 
     }
 }

@@ -11,5 +11,8 @@ namespace ChattingInterfaces
     {
         [OperationContract]
         void GetMessage(string message, string userName);
+        [OperationContract]
+        void GetUpdate(int value, string userName);
+
     }
 }

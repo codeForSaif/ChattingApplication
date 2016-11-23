@@ -31,6 +31,7 @@ namespace ChattingServer
 
             _connectedClients.TryAdd(userName, newClient);
 
+            updateHelper(0, userName);
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Client login: {0} at {1}", newClient.Username, System.DateTime.Now);
             Console.ResetColor();
@@ -45,6 +46,8 @@ namespace ChattingServer
             {
                 ConnectedClient removedClient;
                 _connectedClients.TryRemove(client.Username, out removedClient);
+
+                updateHelper(1, removedClient.Username);
 
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("Client logoff: {0} at {1}", removedClient.Username, System.DateTime.Now);
@@ -75,6 +78,26 @@ namespace ChattingServer
                     client.Value.connection.GetMessage(message, userName);
                 }
             }
+        }
+        private void updateHelper(int value, string userName)
+        {
+            foreach (var client in _connectedClients)
+            {
+                if (client.Value.Username.ToLower() != userName.ToLower())
+                {
+                    client.Value.connection.GetUpdate(value, userName);
+                }
+            }
+        }
+
+        public List<string> GetCurrentUsers()
+        {
+            List<string> listOfUsers = new List<string>();
+            foreach(var client in _connectedClients)
+            {
+                listOfUsers.Add(client.Value.Username);
+            }
+            return listOfUsers;
         }
     }
 }

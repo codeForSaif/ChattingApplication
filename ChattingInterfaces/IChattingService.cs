@@ -18,5 +18,7 @@ namespace ChattingInterfaces
         void Logout();
         [OperationContract]
          void sendMessageToAll(string message, string userName);
+        [OperationContract]
+        List<string> GetCurrentUsers();
     }
 }

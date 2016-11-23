@@ -7,12 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525" Closing="Window_Closing">
     <Grid>
-        <Button x:Name="LoginButton" Content="Login" Margin="209.236,24.47,232.764,0" VerticalAlignment="Top" Click="LoginButton_Click"/>
+        <Button x:Name="LoginButton" Content="Login" Margin="205.903,24.47,232.764,0" VerticalAlignment="Top" Click="LoginButton_Click" Height="23" IsDefault="True"/>
         <TextBox x:Name="UserNameTextBox" HorizontalAlignment="Left" Height="23" Margin="35.706,24.47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150.882"/>
-        <Button x:Name="SendButton" Content="Send" Margin="0,0,35.705,27.511" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" IsDefault="True" Click="SendButton_Click"/>
-        <TextBox x:Name="MessageTextBox" Height="23" Margin="35.706,0,140.706,24.472" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
-        <TextBox x:Name="TextBox" Margin="35.706,76.971,35.705,73.941"/>
-        <Label x:Name="label" Content="" HorizontalAlignment="Right" Margin="0,24.47,35.705,0" VerticalAlignment="Top" Width="131.294" Foreground="#FF13BB1B"/>
+        <Button x:Name="SendButton" Content="Send" Margin="0,0,159.872,24.472" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="79.167" IsDefault="True" Click="SendButton_Click" Height="23"/>
+        <TextBox x:Name="MessageTextBox" Height="23" Margin="35.706,0,250.706,24.472" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="TextBox" Margin="35.706,76.971,159.872,73.941"/>
+        <Label x:Name="label" Content="" HorizontalAlignment="Right" Margin="0,21.51,84.411,0" VerticalAlignment="Top" Width="131.294" Foreground="#FF13BB1B" FontSize="14"/>
+        <ListBox x:Name="UsersListBox" HorizontalAlignment="Right" Margin="0,98.834,23.578,73.941" Width="115"/>
+        <Label x:Name="label1" Content="Users" HorizontalAlignment="Right" Margin="0,67.874,91.911,0" VerticalAlignment="Top" Width="54.166"/>
 
     </Grid>
 </Window>
